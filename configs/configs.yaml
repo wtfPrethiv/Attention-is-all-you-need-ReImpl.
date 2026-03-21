@@ -1,0 +1,33 @@
+model:
+  d_model: 512
+  num_heads: 8
+  num_layers: 6         
+  d_ff: 2048
+  dropout: 0.1
+  vocab_size: 37000    
+  max_seq_len: 512
+
+training:
+  batch_size: 4096         
+  num_epochs: 100          
+  label_smoothing: 0.1
+
+optimizer:
+  type: adam
+  beta1: 0.9
+  beta2: 0.98
+  eps: 1e-9
+
+scheduler:
+  type: noam
+  warmup_steps: 4000
+
+initialization:
+  method: xavier_uniform
+
+regularization:
+  dropout: 0.1
+
+inference:
+  beam_size: 4
+  length_penalty: 0.6
